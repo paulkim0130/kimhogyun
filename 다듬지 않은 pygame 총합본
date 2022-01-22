@@ -1,0 +1,221 @@
+import pygame
+
+import random
+
+def lower_level():
+    print("Here we go!!!")
+    count = 0
+    x1 = random.randint(1, 100)
+    y1 = random.randint(1, 100)
+    while 1:
+        print(x1, "+", y1, "=?")
+        z1 = int(input("what is the answer of {} + {}? ".format(x1, y1)))
+
+        if z1 == x1+y1:
+            print("correct")
+            count = count + 1
+            break
+        else:
+            print("incorrect, please try again")
+            count = count + 1
+    
+    print("you took ", count, "trials to solve this question")
+    continuous = input("Would you want to solve more?\nIf you want to solve lower level more, type 'stay'\nIf you want to go standard of higher level, type 'standard' or 'higher'\n").lower().strip
+    if continuous == "stay": 
+        False
+    elif continuous == "standard":
+        standard_level()
+    elif continuous == "higher":
+        higher_level()
+    else:
+        print("Type correct word")
+        continuous = input("Would you want to solve more?\nIf you want to solve lower level more, type 'stay'\nIf you want to go standard of higher level, type 'standard' or 'higher'\n").lower().strip
+
+def standard_level():
+    print("Here we go!!!")
+    while True:
+        amount_of_questions1 = int(input("How many questions do you want to solve?\n"))
+        for i in range(amount_of_questions1):
+            random_number_11 = random.randint(10,99)
+            random_number_22 = random.randint(10,99)
+            print("Question" +str(i+1)+ ".")
+            addition_standard_level_answer = int(input(random_number_11 + " + " + random_number_22 + " ="))
+            while True:
+                if addition_standard_level_answer == random_number_11 + random_number_22:
+                    print("GREAT!!!\nYou are correct!!")
+                    i =+ 1
+                    break
+                else:
+                    print("Worng answer!\nSolve again!")
+                    addition_standard_level_answer = int(input(str(random_number_11) + " + " + str(random_number_22) + " ="))                     
+                    False
+            continue
+        continuous = input("Would you want to solve more?\nIf you want to solve standard level more, type 'stay'\nIf you want to go lower of higher level, type 'lower' or 'higher'\n").lower().strip
+        if continuous == "stay": 
+            False
+        elif continuous == "lower":
+            lower_level()
+        elif continuous == "higher":
+            higher_level()
+        else:
+            print("Type correct word")
+            continuous = input("Would you want to solve more?\nIf you want to solve standard level more, type 'stay'\nIf you want to go lower of higher level, type 'lower' or 'higher'\n").lower().strip
+
+def higher_level():
+    print("Here we go!!!")
+    while True:
+        amount_of_questions2 = int(input("How many questions do you want to solve?\n"))
+        for i in range(amount_of_questions2):
+            random_number_111 = random.randint(100,999)
+            random_number_222 = random.randint(100,999)
+            print("Question" +str(i+1)+ ".")
+            addition_higher_level_answer = int(input(str(random_number_111) + " + " + str(random_number_222) + " ="))
+            while True:
+                if addition_higher_level_answer == random_number_111 + random_number_222:
+                    print("GREAT!!!\nYou are correct!!")
+                    i =+ 1
+                    break
+                else:
+                    print("Wrong answer!\nSolve again!")
+                    addition_higher_level_answer = int(input(str(random_number_111) + " + " + str(random_number_222) + " ="))                     
+                    False
+            continue
+        continuous = input("Would you want to solve more?\nIf you want to solve higher level more, type 'stay'\nIf you want to go lower of standard level, type 'lower' or 'standard'\n").lower().strip
+        if continuous == "stay": 
+            False
+        elif continuous == "lower":
+            lower_level()
+        elif continuous == "standard":
+            higher_level()
+        else:
+            print("Type correct word")
+            continuous = input("Would you want to solve more?\nIf you want to solve higher level more, type 'stay'\nIf you want to go lower of standard level, type 'lower' or 'standard'\n").lower().strip
+
+def addition():
+    while 1:
+        level = int(input("You can choose a level of addition\n Which level do you want to try\nlower lever=1, standard level=2, and standard level=3 "))
+        if level == 3: 
+            higher_level()
+        elif level == 2:
+            standard_level()
+        elif level == 1:
+            lower_level()
+        else: 
+            break
+        
+
+def subtraction():
+    import random
+    level = input("You can choose a level of addition\n Which level do you want to try\nlower lever, standard level, and standard level ").lower().strip()
+    if level == "higher" or "higher level" or "higher level":
+        higher_level()
+    elif level == "standard" or "standard level" or "standardlevel":
+        standard_level()
+    elif level == "lower" or "lower level" or "lowerlevel":
+        lower_level()
+
+def multiplication():
+    import random
+    level = input("You can choose a level of addition\n Which level do you want to try\nlower lever, standard level, and standard level ").lower().strip()
+    if level == "higher" or "higher level" or "higher level":
+        higher_level()
+    elif level == "standard" or "standard level" or "standard level":
+        standard_level()
+    elif level == "lower" or "lower level" or "lower level":
+        lower_level()
+
+def division():
+    import random
+    level = input("You can choose a level of addition\n Which level do you want to try\nlower lever, standard level, and standard level ").lower().strip()
+    if level == "higher" or "higher level" or "higher level":
+        higher_level()
+    elif level == "standard" or "standard level" or "standard level":
+        standard_level()
+    elif level == "lower" or "lower level" or "lower level":
+        lower_level()
+        
+def function_choose():
+    symbol = input("Which arithmetic operations do you want to try?\nchoose among Addition, Subtraction, Multiplication, and Division\n").lower().strip()
+    if symbol == "addition":
+        addition()
+    elif symbol == "subtraction":
+        subtraction()
+    elif symbol == "multiplication":
+        multiplication()
+    elif symbol == "division":
+        division()
+    else:
+        print("Check your spelling!")
+        
+
+print("Hello, Welcome to Math Question Bank. \n You will get some questions that is proper on your grade. \n DO YOUR BEST!!!")
+grade = int(input("What grade are you in? \n (type integer only)\n"))
+while True:
+    if grade >= 5:
+        print("These question will be very easy for you")
+        quit = input("If you want to quit, type quit. \nIf you want to continue, type any other words.\n")
+        if quit == "quit":
+            break
+        else:
+            function_choose()
+    elif grade <= 4 and grade >= 2:
+        function_choose()
+    elif grade == 1:
+        print("These question will be very hard for you")
+        quit = input("If you want to quit, type quit. \nIf you want to continue, type any other words.\n")
+        if quit == "quit":
+            break
+        else:
+            function_choose()
+    else:
+        print("Type right grade!")
+
+def display_start_screen():
+    pygame.draw.circle(screen, PURPLE, start_button.center, 100, 5)
+
+def display_game_screen():
+    print("It is time to start your math level!")
+
+def check_buttons(pos):
+    global start
+    if start_button.collidepoint(pos):
+        start - True 
+
+pygame.init()
+screen_width = 2000
+screen_height = 1000
+screen = pygame.display.set_mode((screen_width, screen_height))
+pygame.display.set_caption("math")
+
+start_button = pygame.Rect(0, 0, 200, 200)
+start_button.center = (200, screen_height - 200)
+
+BLACK = (0, 0, 0)
+PURPLE = (142, 106, 179)
+
+start = False
+
+running = True
+while running:
+    click_pos = None
+   
+    for event in pygame.event.get():
+        if event.type == pygame.QUIT:
+            running = False
+        elif event.type == pygame.MOUSEBUTTONUP:
+            click_pos = pygame.mouse.get_pos()
+            print(click_pos)
+
+    screen.fill(BLACK)
+
+    if start:
+        display_game_screen()
+    else:
+        display_start_screen()
+
+    if click_pos:
+        check_buttons(click_pos)
+
+    pygame.display.update()
+
+pygame.quit()
